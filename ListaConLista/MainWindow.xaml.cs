@@ -35,5 +35,13 @@ namespace ListaConLista
                 lstPersonas.Items.Add(lst);
             }
         }
+
+        private void lstPersonas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ListBoxItem lst = (ListBoxItem)lstPersonas.SelectedItem;
+            Persona persona = (Persona)lst.Content;
+            lblNombre.Content = persona.Nombre;
+            lblApellido.Content = persona.Apellido;
+        }
     }
 }
